@@ -136,7 +136,7 @@ kable(va1)
 .panel[.panel-name[Finished plot]
 
 ```{r out.width="60%"}
-include_graphics(here("Stata, R concordance/Voice and Accountability - R.png"))
+include_graphics("Voice and Accountability - R.png")
 ```
 ]
 ]
@@ -691,7 +691,7 @@ ggplot(data = va1,
 Stata
 
 ```{r echo=F}
-include_graphics(here("Stata, R concordance/Voice and Accountability - Stata.png"))
+include_graphics("Voice and Accountability - Stata.png")
 ```
 ]
 .pull-right[
@@ -699,7 +699,7 @@ include_graphics(here("Stata, R concordance/Voice and Accountability - Stata.png
 R
 
 ```{r echo=F}
-include_graphics(here("Stata, R concordance/Voice and Accountability - R.png"))
+include_graphics("Voice and Accountability - R.png")
 ```
 ]
 
