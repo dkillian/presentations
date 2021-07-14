@@ -220,7 +220,7 @@ include_graphics("output/viz/priors/C12 Use social media dens.png")
 ]
 .pull-right[
 ```{r out.width="150%", fig.align="right"}
-include_graphics("output/viz/priors/C12 Use social media dot.png")
+include_graphics("output/viz/priors/C12 use social media dot.png")
 ```
 ]
 
