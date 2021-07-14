@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>BPPS-priors.knit</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Dan Killian" />
+    <script src="BPPS-priors_files/header-attrs/header-attrs.js"></script>
+    <link href="BPPS-priors_files/panelset/panelset.css" rel="stylesheet" />
+    <script src="BPPS-priors_files/panelset/panelset.js"></script>
+    <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# <div class="line-block">Bayesian priors for activity co-creation, incorporating expert opinion, gamification</div>
+### Dan Killian
+### June 2021
+
+---
+
+
+
+
+
+
+
+
+
+
+### Background
+
+Analysts will have background knowledge on their research topic
+
+- familiarity with literature / prior studies
+
+- previous work experience
+
+- other subject matter expertise
+
+---
+
+### Background
+
+A popular way of capturing this knowledge is through the Delphi method: 
+
+- ask experts to estimate some outcome
+
+- show experts the average of the first round of estimates and invite them to revise
+
+- repeat until a general consensus is reached (low variation in estimate revisions)
+
+- take the mean of the revised estimates as 'expert knowledge'
+
+More recently, there have been developments in incorporating expert opinion through Bayesian priors
+
+These priors can be used to communicate expert opinion, but can also be entered directly into empirical analysis
+
+See the [annex](#custom) for an explainer on using the beta distribution 
+
+---
+
+### Bayesian priors - application
+
+We tested the use of Bayesian priors on four survey items, using six experts
+
+.pull-left[
+Items
+
+- B1. Aware of USAID
+- B4. Positive perception of USAID
+- B8. Seen USAID logo
+- C12. Use social media
+] 
+
+.pull-right[
+Experts
+
+- Dan Killian, BPPS Team Lead
+- Jacob Patterson-Stein, BPPS Quantitative Analyst
+- Melanie Murphy, BPPS Quantitative Analyst
+- Carolyn Fonseca, BPPS Qualitative Analyst
+- Joseph Schumacher, AMELA Evaluation Lead
+- Camille Gockowski, AMELA Deputy Evaluation Lead
+] 
+
+Let's see what happened
+
+---
+
+### B1. Aware of USAID
+
+.pull-left[
+
+&lt;img src="C:/Egnyte/Private/dkillian/AMELA/BPPS/workflowr/USAID Baseline Public Perception Survey/output/viz/priors/B1 aware dens.png" width="150%" style="display: block; margin: auto auto auto 0;" /&gt;
+]
+.pull-right[
+&lt;img src="C:/Egnyte/Private/dkillian/AMELA/BPPS/workflowr/USAID Baseline Public Perception Survey/output/viz/priors/B1 aware dot.png" width="150%" style="display: block; margin: auto 0 auto auto;" /&gt;
+]
+
+---
+
+### B4. Positive perception of USAID
+
+.pull-left[
+
+&lt;img src="C:/Egnyte/Private/dkillian/AMELA/BPPS/workflowr/USAID Baseline Public Perception Survey/output/viz/priors/B4 perception dens.png" width="150%" style="display: block; margin: auto auto auto 0;" /&gt;
+]
+.pull-right[
+&lt;img src="C:/Egnyte/Private/dkillian/AMELA/BPPS/workflowr/USAID Baseline Public Perception Survey/output/viz/priors/B4 perception dot.png" width="150%" style="display: block; margin: auto 0 auto auto;" /&gt;
+]
+
+---
+
+### B8. Seen USAID logo
+
+.pull-left[
+
+&lt;img src="C:/Egnyte/Private/dkillian/AMELA/BPPS/workflowr/USAID Baseline Public Perception Survey/output/viz/priors/B8 seen USAID logo dens.png" width="150%" style="display: block; margin: auto auto auto 0;" /&gt;
+]
+.pull-right[
+&lt;img src="C:/Egnyte/Private/dkillian/AMELA/BPPS/workflowr/USAID Baseline Public Perception Survey/output/viz/priors/B8 seen USAID logo dot.png" width="150%" style="display: block; margin: auto 0 auto auto;" /&gt;
+]
+
+---
+
+### C12. Use social media
+
+.pull-left[
+
+&lt;img src="C:/Egnyte/Private/dkillian/AMELA/BPPS/workflowr/USAID Baseline Public Perception Survey/output/viz/priors/C12 Use social media dens.png" width="150%" style="display: block; margin: auto auto auto 0;" /&gt;
+]
+.pull-right[
+&lt;img src="C:/Egnyte/Private/dkillian/AMELA/BPPS/workflowr/USAID Baseline Public Perception Survey/output/viz/priors/C12 Use social media dot.png" width="150%" style="display: block; margin: auto 0 auto auto;" /&gt;
+]
+
+---
+
+### Average error across all items
+
+&lt;img src="C:/Egnyte/Private/dkillian/AMELA/BPPS/workflowr/USAID Baseline Public Perception Survey/output/viz/priors/aggregate error.png" width="80%" style="display: block; margin: auto;" /&gt;
+
+---
+
+### Final league table
+
+
+|Expert  | B1 | B4 | B8 | C12 | Average rank| Rank of average | Sum of ranks| Rank of sum | Error| Rank of error |
+|:-------|:--:|:--:|:--:|:---:|------------:|:---------------:|------------:|:-----------:|-----:|:-------------:|
+|Dan     | 2  | 4  | 1  |  2  |         2.25|        1        |            9|      1      | 0.138|       1       |
+|Camille | 1  | 1  | 4  |  3  |         2.25|        1        |            9|      1      | 0.152|       2       |
+|Joseph  | 4  | 2  | 3  |  4  |         3.25|        3        |           13|      3      | 0.291|       3       |
+|Melanie | 3  | 3  | 2  |  6  |         3.50|        4        |           14|      4      | 0.342|       4       |
+|Carolyn | 6  | 5  | 6  |  1  |         4.50|        5        |           18|      5      | 0.362|       5       |
+|Jacob   | 5  | 6  | 5  |  5  |         5.25|        6        |           21|      6      | 0.466|       6       |
+
+Dan and Camille tie for first based on an average or sum of all rankings
+
+Dan wins based on error, but the margin is miniscule and statistically it's still a tie
+
+---
+
+### Thoughts
+
+This was just a demonstration
+
+Could it be a worthwhile exercise internally? With other stakeholders? 
+
+Could it engender learning? Inform adaptive programming? 
+
+Could we try a few cases, document what we learned, and enter into next year's CLA case competition? 
+
+---
+
+class: center, middle
+
+## Thank you!
+
+---
+
+### Annex: using the beta distribution
+
+For an outcome that is some proportion of a total such as "50 percent believe X", we use the beta distribution
+
+The beta distribution is a distribution of proportions (between zero and one) governed by two parameters alpha `\((\alpha)\)` and beta `\((\beta)\)`
+
+The draw x from a beta distribution of proportions is defined as `\(x=\frac{\alpha}{\alpha+\beta}\)`
+
+- `\(\alpha\)` is the number of 'successes'
+- `\(\beta\)` is the number of 'failures'
+
+So for example, for `\(\alpha\)` = 5 and `\(\beta\)` = 5, we have `\(x=\frac{5}{5+5}=\text{50%}\)`
+
+In an effort to bring some intuition to this, you could consider `\(\alpha + \beta\)` to be the sample size of your prior estimate, such that a higher sample size makes your estimate more precise. 
+
+So for `\(\alpha\)` = 5 and `\(\beta\)` = 5, we have a prior sample size of 10 
+
+For `\(\alpha\)` = 50 and `\(\beta\)` = 50, we have a prior sample size of 100 
+
+---
+
+Take a look at beta distributions for (i) `\(\alpha\)` = 5, `\(\beta\)` = 5, and (ii) `\(\alpha\)` = 50, `\(\beta\)` = 50: 
+
+.pull-left[
+
+&lt;img src="C:/Egnyte/Private/dkillian/AMELA/BPPS/workflowr/USAID Baseline Public Perception Survey/output/viz/priors/beta applet 5.png" width="150%" style="display: block; margin: auto auto auto 0;" /&gt;
+]
+.pull-right[
+&lt;img src="C:/Egnyte/Private/dkillian/AMELA/BPPS/workflowr/USAID Baseline Public Perception Survey/output/viz/priors/beta applet 50.png" width="150%" style="display: block; margin: auto 0 auto auto;" /&gt;
+] 
+
+Note that the beta distribution curve follows the shape we would expect, based on a higher or lower prior sample size. 
+
+Try out your own values of `\(\alpha\)` and `\(\beta\)` 
+
+Beta distribution applet: [https://homepage.divms.uiowa.edu/~mbognar/applets/beta.html](https://homepage.divms.uiowa.edu/~mbognar/applets/beta.html) 
+
+---
+
+### Bayesian priors on a proportional outcome
+
+We can also explore our chosen beta distributions through simulation. First, prepare the data. 
+
+
+```r
+args(rbeta)
+```
+
+```
+## function (n, shape1, shape2, ncp = 0) 
+## NULL
+```
+
+shape1 is alpha 
+
+shape2 is beta
+
+
+```r
+set.seed(54932)
+
+x1 &lt;- rbeta(1000, 5,5)   # Prior sample size of 10
+x2 &lt;- rbeta(1000, 50,50) # Prior sample size of 100
+
+x &lt;- data.frame(x1,x2)
+```
+
+---
+
+### Beta distribution for two sets of parameters
+
+&lt;img src="BPPS-priors_files/figure-html/unnamed-chunk-17-1.png" width="80%" style="display: block; margin: auto;" /&gt;
+
+---
+
+### How do we assess the accuracy of one prior relative to another?
+
+Each draw from the distribution can be considered a sample mean
+
+So we take a random draw from the prior distribution and a random draw from the sampling distribution of the survey mean. The difference between these values is our error.  
+
+The mean of all error measurements gives us an overall measure of error for each expert. The expert with the lowest error is considered to have a better prior than others. 
+ 
+---
+ 
+### Converting the survey mean to a beta distribution
+
+In order to measure the error between a prior distribution and the sampling distribution of the survey mean, we need to convert the mean and variance of the survey statistic into a beta distribution. 
+
+It can be [shown](https://stats.stackexchange.com/questions/12232/calculating-the-parameters-of-a-beta-distribution-using-the-mean-and-variance) that the mean and variance of a proportion relate to `\(\alpha\)` and `\(\beta\)` as follows: 
+
+`$$\alpha=\left(\frac{1-\mu}{\sigma^2}-\frac{1}{\mu}\right)\mu^2$$`
+`$$\beta=\sigma\left(\frac{1}{\mu}-1\right)$$`
+These calculations are captured in the following function: 
+
+
+```r
+estBetaParams &lt;- function(mu, var) {
+  alpha &lt;- ((1 - mu) / var - 1 / mu) * mu ^ 2
+  beta &lt;- alpha * (1 / mu - 1)
+  return(params = list(alpha = alpha, beta = beta))
+}
+```
+
+We now use this function to generate a beta distribution from our survey statistic
+
+---
+ 
+### Assessing the accuracy of priors - example
+
+
+```r
+b1_mn &lt;- svymean(~aware,
+        na.rm=T,
+        deff="replace",
+        design=svydat)
+b1_mn
+```
+
+```
+##         mean     SE DEff
+## aware 0.8019 0.0118 6.18
+```
+
+
+```r
+b1_ans &lt;- data.frame(expert="Answer",
+                     item="B1",
+                     x=rbeta(1e5,
+                             estBetaParams(.802, .0118^2)$alpha,
+                             estBetaParams(.802, .0118^2)$beta)) %&gt;%
+  mutate(diff = abs(x-b1_mn))
+b1_ans[1:3,]
+```
+
+```
+##   expert item     x    diff
+## 1 Answer   B1 0.811 0.00887
+## 2 Answer   B1 0.816 0.01420
+## 3 Answer   B1 0.798 0.00345
+```
+
+---
+
+Let's compare this to one of the expert's prior distribution
+
+
+```r
+b1_cam &lt;- data.frame(expert="Camille",
+                     item="B1",
+                     x=rbeta(1e5,750,250)) %&gt;%
+  mutate(diff=abs(x - b1_ans$x))
+
+b1_cam %&gt;%
+  summarize(error=mean(diff),
+            se = sd(diff))
+```
+
+```
+##   error    se
+## 1 0.052 0.018
+```
+
+The mean error is five percent, which is the same as if we had simply taken the difference between the survey mean and the prior mean. 
+
+By taking a simulation-based approach, we also get a measure of the dispersion of the error - in this case, the error is 5.2 percent with a standard deviation of 1.8 percent. 
+
+
+
+
+
+
+
+
+
+
+
+
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"slideNumberFormat": "%current%",
+"highlightStyle": "github",
+"highlightLines": true,
+"ratio": "16:9",
+"countIncrementalSlides": true
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
