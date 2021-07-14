@@ -1,0 +1,7 @@
+expert,B1,B4,B8,C12,rank_ave,minave_rank,rank_sum,minsum_rank,error,error_rank
+Dan,2,4,1,2,2.25,1,9,1,0.138,1
+Camille,1,1,4,3,2.25,1,9,1,0.1515,2
+Joseph,4,2,3,4,3.25,3,13,3,0.291,3
+Melanie,3,3,2,6,3.5,4,14,4,0.34175,4
+Carolyn,6,5,6,1,4.5,5,18,5,0.36175,5
+Jacob,5,6,5,5,5.25,6,21,6,0.4655,6
